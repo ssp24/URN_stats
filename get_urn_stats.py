@@ -16,7 +16,7 @@ def get_all():
 current_time = datetime.datetime.now()
 current_time = current_time.strftime('%Y-%m-%d %H:%M')
 
-urn_all = get_all()
+urns = get_all()
 
 text = current_time + ", " + urn_all + "\n"
 
