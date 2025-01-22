@@ -18,7 +18,7 @@ current_time = current_time.strftime('%Y-%m-%d %H:%M')
 
 urns = get_all()
 
-text = current_time + ", " + urn_all + "\n"
+text = current_time + ", " + urns + "\n"
 
 with open("data/stats.txt", 'a') as outfile:
     outfile.write(text)
