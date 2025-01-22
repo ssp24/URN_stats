@@ -4,6 +4,7 @@ on:
     - cron: '0,15,30,45 * * * *'
     #- cron: '0 6 * * *'   #runs every day at 
     #- cron: '*/5 * * * *' #runs every 5 minutes
+  workflow_dispatch:
 
 jobs:
   pull_data:
