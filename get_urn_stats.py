@@ -7,7 +7,7 @@ def get_all():
     r1 = requests.get("https://api.nbn-resolving.org/v2/urns")
     data = r1.json()
     df = pd.json_normalize(data)
-    total_urns = df['totalItems'][0]
+    total_urns = str(df['totalItems'][0])
         
     return(total_urns)
 
