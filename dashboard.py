@@ -24,7 +24,7 @@ df_counter = df[-2:]
 
 #calculate growth total-urns: 
 todays_total_urns = df_counter['total-urns'].values[1]
-print_total = f"{todays_total_urns:,}".replace(',', '.')
+print_total_urns = f"{todays_total_urns:,}".replace(',', '.')
 yesterdays_total_urns = df_counter['total-urns'].values[0]
 diff_urns = todays_total_urns-yesterdays_total_urns
 diff_urns = f"{diff_urns:,}".replace(',', '.')
