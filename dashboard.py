@@ -45,8 +45,8 @@ col2.metric(label="Registrierte Unternamensräume", value=print_total_namespaces
 df['time_short'] = df['time'].str[:10]
 fig0 = px.line(df, x='time_short', y='total-urns', title="Anzahl registrierter URNs", color_discrete_sequence=["#1e2a9c"],
               labels={
-                    "date": "Datum",
-                    "dnb-all": "Anzahl URNs"
+                    "time_short": "Datum",
+                    "total-urns": "Anzahl URNs"
               })
 st.plotly_chart(fig0) 
 
