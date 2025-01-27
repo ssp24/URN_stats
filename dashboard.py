@@ -42,8 +42,8 @@ col1, col2 = st.columns(2)
 col1.metric(label="Registrierte URNs", value=print_total_urns, delta=f"{diff_urns} seit gestern")
 col2.metric(label="Registrierte Unternamensräume", value=print_total_namespaces, delta=f"{diff_namespaces} seit gestern")
 
-
-fig0 = px.line(df, x='time', y='total-urns', title="Anzahl registrierter URNs", color_discrete_sequence=["#1e2a9c"],
+df['time_short'] = df['time'].str[:10]
+fig0 = px.line(df, x='time_short', y='total-urns', title="Anzahl registrierter URNs", color_discrete_sequence=["#1e2a9c"],
               labels={
                     "date": "Datum",
                     "dnb-all": "Anzahl URNs"
