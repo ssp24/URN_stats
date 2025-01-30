@@ -34,7 +34,7 @@ todays_total_namespaces = df_counter['total-namespaces'].values[1]
 print_total_namespaces = f"{todays_total_namespaces:,}".replace(',', '.')
 yesterdays_total_namespaces = df_counter['total-namespaces'].values[0]
 diff_namespaces = todays_total_namespaces-yesterdays_total_namespaces
-diff_namespaces = f"{diff_namespaces:,}".replace(',', '.')
+diff_namespaces_str = f"{diff_namespaces:,}".replace(',', '.')
 
 
 
@@ -44,7 +44,7 @@ with col1:
 
 with col2:
   if diff_namespaces >= 1:
-    st.metric(label="Registrierte Unternamensräume", value=print_total_namespaces, delta=f"{diff_namespaces} seit gestern")
+    st.metric(label="Registrierte Unternamensräume", value=print_total_namespaces, delta=f"{diff_namespaces_str} seit gestern")
   else:
     st.metric(label="Registrierte Unternamensräume", value=print_total_namespaces)
 
