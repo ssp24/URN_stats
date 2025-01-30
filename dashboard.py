@@ -3,9 +3,8 @@ import plotly.express as px
 import streamlit as st
 
 st.subheader("Infographiken zum URN-Service der DNB")
-st.markdown("""Diese App ist ein Prototyp! Sie bietet eine Übersicht über die Anzahl an Publikationen
-              in der DNB seit Februar 2023. Hierfür wird 1x täglich um 07:00 Uhr automatisch die SRU-Schnittstelle 
-               der DNB abgefragt und die Werte werden aktualisiert.""")
+st.markdown("""Diese App ist ein Prototyp! Sie bietet einen aktuellen Blick auf die Zahl der vergebenen URNs aus den Namensräumen urn:nbn:de und urn:nbn:ch seit Januar 2025. 
+                Hierfür wird 1x täglich um 06:00 Uhr automatisch die REST-Schnittstelle des URN-Service der DNB abgefragt und die Werte aktualisiert.""")
 
 with open('data/stats.txt') as f:
     stats = [line.rstrip('\n') for line in f]
