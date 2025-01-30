@@ -39,12 +39,14 @@ diff_namespaces = f"{diff_namespaces:,}".replace(',', '.')
 
 
 col1, col2 = st.columns(2) 
-col1.metric(label="Registrierte URNs", value=print_total_urns, delta=f"{diff_urns} seit gestern")
+with col1: 
+  st.metric(label="Registrierte URNs", value=print_total_urns, delta=f"{diff_urns} seit gestern")
 
-if diff_namespaces >= 1:
-  col2.metric(label="Registrierte Unternamensräume", value=print_total_namespaces, delta=f"{diff_namespaces} seit gestern")
-else:
-  col2.metric(label="Registrierte Unternamensräume", value=print_total_namespaces)
+with col2:
+  if diff_namespaces >= 1:
+    st.metric(label="Registrierte Unternamensräume", value=print_total_namespaces, delta=f"{diff_namespaces} seit gestern")
+  else:
+    st.metric(label="Registrierte Unternamensräume", value=print_total_namespaces)
 
 df['time_short'] = df['time'].str[:10]
 fig0 = px.line(df, x='time_short', y='total-urns', title="Anzahl registrierter URNs", color_discrete_sequence=["#1e2a9c"],
