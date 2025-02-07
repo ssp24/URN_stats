@@ -58,9 +58,8 @@ with col2:
   else:
     st.metric(label="Registrierte Unternamensräume", value=print_total_namespaces)
 
-st.subheader("Zuwachs ab 2025")
 df['time_short'] = df['time'].str[:10]
-fig0 = px.line(df, x='time_short', y='total-urns', title="Anzahl registrierter URNs", color_discrete_sequence=["#1e2a9c"],
+fig0 = px.line(df, x='time_short', y='total-urns', title="Anzahl registrierter URNs ab 2025", color_discrete_sequence=["#1e2a9c"],
               labels={
                     "time_short": "Datum",
                     "total-urns": "Anzahl URNs"
@@ -68,12 +67,9 @@ fig0 = px.line(df, x='time_short', y='total-urns', title="Anzahl registrierter U
 st.plotly_chart(fig0) 
 
 
-st.subheader("Gesamt") 
 all_data = [df_old, df]
 df_concat = pd.concat(all_data)
 df_concat['time_short'] = df_concat['time'].str[:10]
-
-st.dataframe(df_concat)
 
 fig1 = px.line(df_concat, x='time_short', y='total-urns', title="Anzahl registrierter URNs seit 2003", height=750, color_discrete_sequence=["#1e2a9c"],
               labels={
