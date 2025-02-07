@@ -72,12 +72,12 @@ all_data = [df_old, df]
 df_concat = pd.concat(all_data)
 st.dataframe(df_concat)
 #df['new_time'] = df['time'].str[:4]
-#fig0 = px.line(df, x='time_short', y='total-urns', title="Anzahl registrierter URNs", color_discrete_sequence=["#1e2a9c"],
-#              labels={
-#                    "time_short": "Datum",
-#                    "total-urns": "Anzahl URNs"
-#              })
-#st.plotly_chart(fig0) 
+fig1 = px.line(df_concat, x='time', y='total-urns', title="Anzahl registrierter URNs seit 2003", color_discrete_sequence=["#1e2a9c"],
+              labels={
+                    "time": "Datum",
+                    "total-urns": "Anzahl URNs"
+              })
+st.plotly_chart(fig1) 
 
 
 
