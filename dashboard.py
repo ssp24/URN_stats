@@ -25,7 +25,7 @@ df['total-namespaces'] = df['total-namespaces'].astype('int')
 df_counter = df[-2:]
 
 #Read old stats
-df_old = pd.DataFrame([sub.split(",") for sub in stats_old]
+df_old = pd.DataFrame([sub.split(",") for sub in stats_old])
 headers_old = df_old.iloc[0].values
 df_old.columns = headers_old
 df_old.drop(index=0, axis=0, inplace=True)
