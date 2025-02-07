@@ -70,9 +70,10 @@ st.plotly_chart(fig0)
 st.subheader("Gesamt") 
 all_data = [df_old, df]
 df_concat = pd.concat(all_data)
-fig1 = px.line(df_concat, x='time', y='total-urns', title="Anzahl registrierter URNs seit 2003", height=750, color_discrete_sequence=["#1e2a9c"],
+df_concat['time_short'] = df_concat['time'].str[:10]
+fig1 = px.line(df_concat, x='time_short', y='total-urns', title="Anzahl registrierter URNs seit 2003", height=750, color_discrete_sequence=["#1e2a9c"],
               labels={
-                    "time": "Datum",
+                    "time_short": "Datum",
                     "total-urns": "Anzahl URNs"
               })
 st.plotly_chart(fig1) 
