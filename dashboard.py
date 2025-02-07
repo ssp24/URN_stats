@@ -69,7 +69,7 @@ st.plotly_chart(fig0)
 
 st.subheader("Gesamt") 
 all_data = [df_old, df]
-df_concat = df_old.concat(all_data)
+df_concat = pd.concat(all_data)
 st.dataframe(df_merge)
 #df['new_time'] = df['time'].str[:4]
 #fig0 = px.line(df, x='time_short', y='total-urns', title="Anzahl registrierter URNs", color_discrete_sequence=["#1e2a9c"],
