@@ -29,7 +29,7 @@ df_old = pd.DataFrame([sub.split(",") for sub in stats_old])
 headers_old = df_old.iloc[0].values
 df_old.columns = headers_old
 df_old.drop(index=0, axis=0, inplace=True)
-df_old['urn_all'] = df_old['urn_all'].astype('int')
+df_old['total-urns'] = df_old['total-urns'].astype('int')
 
 
 #calculate growth total-urns: 
@@ -68,7 +68,7 @@ fig0 = px.line(df, x='time_short', y='total-urns', title="Anzahl registrierter U
 st.plotly_chart(fig0) 
 
 st.subheader("Gesamt") 
-df_merge = df_old.merge(df, left_on='time', right_on='time_short')
+df_merge = df_old.merge(df, left_on='time', right_on='time')
 st.dataframe(df_merge)
 #df['new_time'] = df['time'].str[:4]
 #fig0 = px.line(df, x='time_short', y='total-urns', title="Anzahl registrierter URNs", color_discrete_sequence=["#1e2a9c"],
