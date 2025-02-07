@@ -78,7 +78,7 @@ fig1 = px.line(df_concat, x='time_short', y='total-urns', title="Anzahl registri
               })
 st.plotly_chart(fig1) 
 
-fig2 = px.bar(df_concat, x='time_short', y='total-urns', title="Anzahl registrierter URNs seit 2003", height=750, color_discrete_sequence=["#1e2a9c"],
+fig2 = px.area(df_concat, x='time_short', y='total-urns', title="Anzahl registrierter URNs seit 2003", height=750, color_discrete_sequence=["#1e2a9c"],
               labels={
                     "time_short": "Datum",
                     "total-urns": "Anzahl URNs"
